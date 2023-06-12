@@ -8,6 +8,12 @@
         <p>describe your idea!</p>
       </h1>
       <p class="p-gray mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam in nobis, dolorum molestiae debitis aliquid consequuntur inventore quasi ab quibusdam.</p>
+      {% if "valid" in request.GET %}
+        <div class="alert alert-success alert-dismissible fade show my-4" role="alert">
+          <strong>Thanks</strong>! Your message has been sent.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endif %}
       <p class="fw-bold">1. Enter your contact information</p>
       <form action="" method="POST">
         {% csrf_token %}
