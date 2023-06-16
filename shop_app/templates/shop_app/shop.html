@@ -3,24 +3,30 @@
 <div class="container">
     <div class="row">
         <div class="col"></div>
-        <div class="col-md-8 px-5 mt-5 border-header">
+        <div class="col-md-8 px-5 my-5">
             <h1 class="mb-md-5 mb-4">Our Products</h1>
             <p class="p-gray mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam in nobis, dolorum molestiae debitis aliquid consequuntur inventore quasi ab quibusdam.</p>
         </div>
         <div class="col"></div>
     </div>
 </div>
-<div class="container-fluid text-center">
+<div class="container-fluid text-center border-header">
     <div class="row">
         <div class="col-md-2 mx-auto">
             <p>Categories</p>
         </div>
-        <div class="col-md-8 row mx-auto">
+        <div class="col-md-8 row mx-auto row-cols-1 row-cols-md-4 g-4">
             {% for product in products %}
-                <div class="col-md-4">
-                    <img src="{{ product.image.url }}" class="img-fluid" alt="">
-                    <h2 class="card-title">{{ product.title }}</h2>
-                    <p class="card-text">{{ product.price }} USD</p>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ product.image.url }}" class="img-fluid card-img-top" style="max-height: 285px; object-fit: cover;" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ product.title }}</h5>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text">{{ product.price }} USD</p>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
