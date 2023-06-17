@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap');
 body {
-  background: #edf9ffa1;
+  background: #f5fcff70;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -20,7 +20,7 @@ body {
   border-bottom: 1.5px solid #ced4da;
 }
 .border-header {
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 @media (max-width: 992px) {
   .border-header {

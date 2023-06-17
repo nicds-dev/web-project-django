@@ -17,7 +17,7 @@ def contact(request):
             subject = request.POST.get('subject')
             message = request.POST.get('message')
             try:
-                send_mail(subject, f'The user with name {name} sent the following message:?\n\n {message}', email, ['cuentaparaadobe2001@gmail.com'])
+                send_mail(subject, f'The user with name {name} and email: {email}, sent the following message:\n\n {message}', email, ['cuentaparaadobe2001@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('/contact/?valid')
