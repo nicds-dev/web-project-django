@@ -15,16 +15,16 @@
         <div class="col-md-2 mx-auto">
             <p>Categories</p>
         </div>
-        <div class="col-md-8 row mx-auto row-cols-1 row-cols-md-4 g-4">
+        <div class="col-md-8 row mx-auto mt-0 row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
             {% for product in products %}
                 <div class="col">
                     <div class="card h-100">
-                        <img src="{{ product.image.url }}" class="img-fluid card-img-top" style="max-height: 285px; object-fit: cover;" alt="">
+                        <img src="{{ product.image.url }}" class="img-fluid card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title text-primary">{{ product.title }}</h5>
                         </div>
                         <div class="card-footer">
-                            <p class="card-text">{{ product.price }} USD</p>
+                            <p class="card-text">${{ product.price }} USD</p>
                         </div>
                     </div>
                 </div>
