@@ -77,3 +77,15 @@ body {
 .button-animation:active {
   transform: scale(0.95);
 }
+/* Cart Shopping */
+ul.dropdown-cart{
+  min-width: 235px;
+}
+ul.dropdown-cart li .item{
+  padding: 1px 5px;
+  margin: 3px 0;
+  border-radius: 5px;
+}
+ul.dropdown-cart li .item:hover{
+  background-color:#f3f3f3;
+}
