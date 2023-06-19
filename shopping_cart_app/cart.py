@@ -1,4 +1,4 @@
-class Cart(models.Model):
+class Cart():
     def __init__(self, request):
         self.request = request
         self.session = request.session
@@ -9,7 +9,7 @@ class Cart(models.Model):
         if product_id not in self.cart:
             self.cart[product_id] = {
                 "product_id": product.id,
-                "name": product.name,
+                "name": product.title,
                 "quantity": 0,
                 "price": str(product.price),
                 "image": product.image.url

@@ -45,14 +45,24 @@
             </svg>
           </button>
           <ul class="dropdown-menu dropdown-cart p-1">
+          {% if request.session.cart.items %}
+            {% for key, value in request.session.cart.items %}
+              <li>
+                <span class="item row">
+                  <span class="col m-auto">{{ value.name }}</span>
+                  <span class="col text-end">{{ value.quantity }}</span>
+                  <div class="col text-end">
+                    <a href="{% url 'shopping_cart_app:add' value.product_id %}" class="btn btn-success btn-sm">+</a>
+                    <a href="{% url 'shopping_cart_app:delete_one' value.product_id %}" class="btn btn-danger btn-sm">-</a>
+                  </div>
+                </span>
+              </li>
+            {% endfor %}
+          {% else %}
             <li>
-              <span class="item row">
-                <span class="col m-auto">Total: {{ import_total_price }} USD</span>
-                <div class="col text-end">
-                  <button type="button" class="btn btn-danger btn-sm">X</button>
-                </div>
-              </span>
+              <span class="mx-auto"> Total: {{ import_total_price }} USD</span>
             </li>
+          {% endif %}
           </ul>
         </div>
       </header>
