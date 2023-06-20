@@ -24,7 +24,7 @@
                             <h5 class="card-title">{{ product.title }}</h5>
                         </div>
                         <div class="card-footer row mx-0">
-                            <p class="col m-auto fw-semibold">$ {{ product.price }} USD</p>
+                            <p class="col m-auto fw-semibold">${{ product.price }} USD</p>
                             <div class="col">
                                 <a class="btn btn-outline-success" href="{% url 'shopping_cart_app:add' product.id %}">
                                     <span class="me-2">Add</span>
