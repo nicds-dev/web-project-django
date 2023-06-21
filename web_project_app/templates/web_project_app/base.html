@@ -40,7 +40,7 @@
           <div class="col-md-3 text-end">
             <a class="btn btn-outline-primary me-2 disabled">Hello, {{ user.username }}</a>
             <a href="{% url 'Logout' %}" class="btn btn-primary me-2">Logout</a>
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart2 col" viewBox="0 1.5 16 16">
                   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
               </svg>
@@ -48,19 +48,19 @@
             <ul class="dropdown-menu dropdown-cart p-1">
               {% if request.session.cart.items %}
                 {% for key, value in request.session.cart.items %}
-                  <li>
-                    <span class="item row">
-                      <div class="col-7 d-flex flex-column">
-                        <span class="m-auto">{{ value.name|slice:":15"|add:"..." }}</span>
-                        <span class="m-auto">${{ value.price }}</span>
-                      </div>
-                      <span class="col-2 text-center m-auto">{{ value.quantity }}</span>
-                      <div class="col-3 text-center m-auto">
-                        <a href="{% url 'shopping_cart_app:add' value.product_id %}" class="btn btn-success btn-sm">+</a>
-                        <a href="{% url 'shopping_cart_app:del_one' value.product_id %}" class="btn btn-danger btn-sm" style="width: 28px;">-</a>
-                      </div>
-                    </span>
-                  </li>
+                <li>
+                  <span class="item row">
+                    <div class="col-7 d-flex flex-column">
+                      <span class="m-auto">{{ value.name|slice:":15"|add:"..." }}</span>
+                      <span class="m-auto">${{ value.price }}</span>
+                    </div>
+                    <span class="col-2 text-center m-auto">{{ value.quantity }}</span>
+                    <div class="col-3 text-center m-auto">
+                      <a href="{% url 'shopping_cart_app:add' value.product_id %}" class="btn btn-success btn-sm">+</a>
+                      <a href="{% url 'shopping_cart_app:del_one' value.product_id %}" class="btn btn-danger btn-sm" style="width: 28px;">-</a>
+                    </div>
+                  </span>
+                </li>
                 {% endfor %}
                 <li>
                   <p class="text-center m-2"> Total: {{ import_total_price }} USD</p>

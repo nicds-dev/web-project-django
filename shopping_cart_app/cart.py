@@ -1,8 +1,11 @@
 class Cart():
     def __init__(self, request):
-        """self.request = request
+        self.request = request
         self.session = request.session
-        self.cart = self.session.get("cart", {})"""
+        cart = self.session.get("cart")
+        if not cart:
+            cart = self.session["cart"] = {}
+        self.cart = cart
 
     def add(self, product, quantity=1):
         product_id = str(product.id)
@@ -34,10 +37,10 @@ class Cart():
                 self.delete(product)
         self.save()
 
-    """def delete_all(self):
+    def delete_all(self):
         self.session["cart"] = {}
         self.session.modified = True
 
     def save(self):
         self.session["cart"] = self.cart
-        self.session.modified = True"""
+        self.session.modified = True
