@@ -17,8 +17,8 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="bg-light px-5 border-header">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <nav class="bg-light px-5 {% if request.path != '/' %}border-header{% endif %}">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
           <span class="navbar-brand mb-0 fs-4 fw-bolder text-primary">VirtualShop</span>
         </div>

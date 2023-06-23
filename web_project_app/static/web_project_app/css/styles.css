@@ -5,6 +5,17 @@ body {
   background-position: center;
   background-size: cover;
 }
+#hero {
+  width: 100%;
+  height: 50vh;
+  background: url(../img/background.jpg);
+  background-size: cover;
+  position: relative;
+}@media (min-width: 1024px){
+  #hero {
+    background-attachment: fixed;
+  }
+}
 .site-heading {
   margin-top: 5rem;
   margin-bottom: 5rem;

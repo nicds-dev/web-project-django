@@ -1,38 +1,47 @@
 {% extends 'web_project_app/base.html' %} {% load static %} {% block content %}
-
-<!-- Heading -->
-<section class="page-section clearfix">
+<section id="hero" class="d-flex align-items-center">
   <div class="container">
-    <div class="intro">
-      <!-- <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'web_project_app/img/principal.jpg' %}" alt="" /> -->
-      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <h2 class="section-heading mb-4">
-          <span class="section-heading-upper">Punctuality</span>
-          <span class="section-heading-lower">The best stock</span>
-        </h2>
-        <p class="mb-3">In your inbox, you will receive 48h with normal delivery, less 24h with express delivery.</p>
+    <section class="d-flex align-items-center">
+      <div class="container">
+        <h1 class="fw-bold">Welcome to <span class="text-primary">Web Project</span></h1>
+        <p class="fs-5 mt-3">Lorem ipsum, dolor sit adipisicing elit. Nisi saepe rem illo quisquam provident.</p>
+        <div class="mt-4">
+          <button class="btn btn-primary">My Home Button</button>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </section>
-
-<!-- Message -->
-<section class="page-section cta">
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <div class="cta-inner text-center rounded">
-          <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Totally compromised</span>
-            <span class="section-heading-lower">Warranty</span>
-          </h2>
-          <p class="mb-0">
-            More than 10 years of experience in the industry, we have the knowledge and skills needed to carry out any of our products.
-          </p>
+<div class="container text-center my-5">    
+  <h3 class="mb-4 fw-semibold">What We Do</h3>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card border-light m-4">
+        <div class="card-body shadow rounded">
+          <h5 class="card-title fw-semibold">Special title treatment</h5>
+          <p class="card-text my-4 p-gray">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="card border-light m-4">
+        <div class="card-body shadow rounded">
+          <h5 class="card-title fw-semibold">Special title treatment</h5>
+          <p class="card-text my-4 p-gray">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div> 
+    </div>
+    <div class="col-sm-4">
+      <div class="card border-light m-4">
+        <div class="card-body shadow rounded">
+          <h5 class="card-title fw-semibold">Special title treatment</h5>
+          <p class="card-text my-4 p-gray">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
   </div>
-</section>
-
+</div
 {% endblock %}
