@@ -12,8 +12,18 @@
 </div>
 <div class="container-fluid text-center border-header">
     <div class="row">
-        <div class="col-md-2 mx-auto">
-            <p>Categories</p>
+        <div class="col-md-2 mx-auto mt-4">
+            <p class="fw-semibold fs-5">Categories</p>
+            {% for category in categories %}
+                <div class="my-3">
+                    <a
+                        href="{% url 'product_by_category' category.id %}"
+                        class="d-inline link-underline-opacity-{% if category == selected_category %}75 link-success link-offset-3{% else %}0 link-primary{% endif %}">
+                        {{ category.title }}
+                    </a>
+                    <p class="d-inline text-secondary">({{ category.get_product_count }})</p>
+                    </div>
+            {% endfor %}
         </div>
         <div class="col-md-8 row mx-auto mt-0 row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
             {% for product in products %}

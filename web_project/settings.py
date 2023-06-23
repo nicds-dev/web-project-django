@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'shop_app',
     'shopping_cart_app',
     'authentication_app',
+    'orders_app',
     'crispy_forms',
     'crispy_bootstrap5'
 ]
@@ -154,5 +155,5 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'cuentaparaadobe2001@gmail.com'
-EMAIL_HOST_PASSWORD = 'my_pass'
+EMAIL_HOST_PASSWORD = 'mqajqhuxvpjaphfv'
 DEFAULT_FROM_EMAIL = 'cuentaparaadobe2001@gmail.com'
