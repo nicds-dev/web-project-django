@@ -1,9 +1,9 @@
-{% extends 'web_project_app/base.html' %} {% load static %} {% block content %} {% load crispy_forms_tags %}
+{% extends 'web_project_app/base.html' %} {% block content %} {% load crispy_forms_tags %}
 
 <div class="container">
     <form method="POST" action="">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% crispy form %}
         <button type="submit" class="btn btn-primary">Sign-up</button>
     </form>
 </div>
